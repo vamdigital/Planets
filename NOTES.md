@@ -1,0 +1,15 @@
+- [x] Cleanup Scaffold
+- [x] Add nvm 18.16.0
+- [x] Add ESLINT Config
+- [x] Add Prettier Config
+- [x] Make it committizen friendly repo
+- [ ] Add conventional commits
+- [ ] Add husky pre-commit hooks
+- [ ] Add vitest
+- [ ] Add playwright
+- [ ] Add SVG support to nextjs config
+- [ ] Extend Tailwind theme colors
+- [ ] Get all assets and fonts from the design files
+- [ ] Add favicon
+- [ ] Create API Route with `get[planet]`
+- [ ] Add .env.local file and add API_KEY:PLANETS
