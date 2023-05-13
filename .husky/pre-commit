@@ -27,6 +27,14 @@ npm run check-types ||
     false;
 )
 
+# Check unit test
+npm run test ||
+(
+    echo '🤡😂❌🤡 Failed Unit test. 🤡😂❌🤡
+            Are you kidding me... shipping without proper testing the feature'
+    false;
+)
+
 # If everything passes... Now we can commit
 echo '🤔🤔🤔🤔... Alright... Code looks good to me... Trying to build now. 🤔🤔🤔🤔'
 
