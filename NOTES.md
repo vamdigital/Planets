@@ -9,7 +9,7 @@
 - [x] Add playwright
 - [x] Add SVG support to nextjs config
 - [x] Extend Tailwind theme colors
-- [ ] Get all assets and fonts from the design files
-- [ ] Add favicon
-- [ ] Add .env.local file and add API_KEY:PLANETS
+- [x] Get all assets and fonts from the design files
+- [x] Add favicon
+- [x] Add .env.local file and add API_KEY:PLANET_BONG
 - [ ] Create API Route with `get[planet]`
