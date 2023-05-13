@@ -33,11 +33,15 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.33.0",
+    "@svgr/webpack": "^8.0.1",
     "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react": "^4.0.0",
     "cz-conventional-changelog": "^3.3.0",
+    "file-loader": "^6.2.0",
     "husky": "^8.0.0",
     "jsdom": "^22.0.0",
+    "vite-plugin-svgr": "^3.2.0",
+    "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.31.0"
   },
   "config": {

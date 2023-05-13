@@ -5,9 +5,9 @@
 - [x] Make it committizen friendly repo
 - [x] Add conventional commits
 - [x] Add husky pre-commit hooks
-- [ ] Add vitest
-- [ ] Add playwright
-- [ ] Add SVG support to nextjs config
+- [x] Add vitest
+- [x] Add playwright
+- [x] Add SVG support to nextjs config
 - [ ] Extend Tailwind theme colors
 - [ ] Get all assets and fonts from the design files
 - [ ] Add favicon
