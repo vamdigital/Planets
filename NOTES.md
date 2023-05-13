@@ -8,7 +8,7 @@
 - [x] Add vitest
 - [x] Add playwright
 - [x] Add SVG support to nextjs config
-- [ ] Extend Tailwind theme colors
+- [x] Extend Tailwind theme colors
 - [ ] Get all assets and fonts from the design files
 - [ ] Add favicon
 - [ ] Add .env.local file and add API_KEY:PLANETS

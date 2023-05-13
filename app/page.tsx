@@ -1,4 +1,5 @@
-import VercelLogo from '@planets/public/assets/next.svg'
+import VercelLogo from '@planets/public/assets/icons/next.svg'
+import Earth from '@planets/public/assets/planets/planet-earth.svg'
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <h1 className="text-7xl">The Planets</h1>
       <h2 className="text-planet-h2 font-heading text-jupiter">Jupiter</h2>
       <p className="text-planet-body font-body text-earth">Planet we live on</p>
+      <Earth />
     </main>
   )
 }
