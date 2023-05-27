@@ -1,5 +1,8 @@
 import { Antonio, League_Spartan } from 'next/font/google'
+import Image from 'next/image'
 import './globals.css'
+import { Header } from '@planets/app/components/Header'
+import DB from '@planets/app/api/db/data.json'
 
 export const metadata = {
   title: 'The Planets',
@@ -21,14 +24,36 @@ const spartan = League_Spartan({
   variable: '--font-spartan'
 })
 
-export default function RootLayout({
+const getPlanetNames = async () => {
+  const linkUrls = DB.reduce<string[]>((acc, curr) => {
+    const name = curr.name.toLowerCase()
+    acc.push(name)
+    return acc
+  }, [])
+
+  return linkUrls
+}
+
+export default async function RootLayout({
   children
 }: {
   children: React.ReactNode
 }) {
+  const linkUrls = await getPlanetNames()
+
   return (
     <html lang="en" className={`${antonio.variable} ${spartan.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Header linkUrls={linkUrls} />
+        <Image
+          src="/assets/icons/background-stars.svg"
+          alt="background-starry"
+          fill
+          priority
+          className="-z-10 bg-planet-primary object-cover"
+        />
+        {children}
+      </body>
     </html>
   )
 }

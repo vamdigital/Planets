@@ -12,4 +12,6 @@
 - [x] Get all assets and fonts from the design files
 - [x] Add favicon
 - [x] Add .env.local file and add API_KEY:PLANET_BONG
-- [ ] Create API Route with `get[planet]`
+- [x] Create API Route with `get[planet]`
+- [ ] Create server config to point to the correct url based on process.env.NODE_ENV
+- [ ] Create Header Component

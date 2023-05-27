@@ -6,6 +6,9 @@ test('home', () => {
   render(<Home />)
   const main = within(screen.getByRole('main'))
   expect(
-    main.getByRole('heading', { level: 1, name: /The Planets/i })
+    main.getByRole('heading', {
+      level: 1,
+      name: /the universe is a pretty big space to explore/i
+    })
   ).toBeDefined()
 })

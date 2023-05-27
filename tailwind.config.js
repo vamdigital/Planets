@@ -35,7 +35,8 @@ module.exports = {
         'planet-h2': ['40px', '52px', { letterSpacing: '-1.5' }],
         'planet-h3': ['12px', '25px', { letterSpacing: '2.6' }],
         'planet-h4': ['11px', '25px', { letterSpacing: '1' }],
-        'planet-body': ['18px', '32px']
+        'planet-body': ['18px', '32px'],
+        'planet-mobile-nav': ['15px', '25px']
       }
     }
   },

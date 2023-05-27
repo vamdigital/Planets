@@ -1,3 +1,101 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  height: 100%;
+}
+
+body {
+  @apply text-white;
+  position: relative;
+  min-height: 100%;
+}
+
+/* custom classes for giving color bg*/
+
+.mercury-bg {
+  @apply bg-mercury;
+}
+
+.venus-bg {
+  @apply bg-venus;
+}
+
+.earth-bg {
+  @apply bg-earth;
+}
+
+.mars-bg {
+  @apply bg-mars;
+}
+
+.jupiter-bg {
+  @apply bg-jupiter;
+}
+
+.saturn-bg {
+  @apply bg-saturn;
+}
+
+.uranus-bg {
+  @apply bg-uranus;
+}
+
+.neptune-bg {
+  @apply bg-neptune;
+}
+
+/* custom classes to give text color */
+.text-mercury {
+  color: #419ebb;
+}
+
+.text-venus {
+  color: #eda249;
+}
+
+.text-earth {
+  color: #6f2edf;
+}
+
+.text-mars {
+  color: #d14c32;
+}
+
+.text-jupiter {
+  color: #d83a34;
+}
+
+.text-saturn {
+  color: #cd5120;
+}
+.text-uranus {
+  color: #1ec2a4;
+}
+
+.text-neptune {
+  color: #2d68f0;
+}
+
+/* Floating Animation */
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  /* margin-left: 30px; */
+  /* margin-top: 5px; */
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
