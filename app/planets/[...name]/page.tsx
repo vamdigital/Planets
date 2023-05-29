@@ -5,6 +5,7 @@ import { Pills } from '@planets/app/components/Pills'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { motion } from 'framer-motion'
 
 export async function generateStaticParams() {
   return Planets.map(res => [
@@ -45,22 +46,35 @@ export default async function Page({
   const innerLinks = planetKeys.slice(1, 4)
 
   return (
-    <PageWrapper>
+    <>
       <div className="flex flex-col mt-[-20px] md:max-w-[800px] md:mt-16 max-w-[1000px] mx-auto md:px-4 md:min-h-[60vh] md:justify-center lg:flex-row lg:items-center lg:gap-20 ">
-        <div className="flex w-full gap-4 md:hidden border-b-[1px] border-slate-500 mb-16 justify-center items-center">
-          {innerLinks.map(link => (
-            <Link
-              href={`planets/${params.name[0]}/${link}`}
-              className="py-4 px-6 w-full text-center md:text-left uppercase"
-              key={link}
-            >
-              {link}
-            </Link>
-          ))}
+        <div className="flex w-full md:gap-4 md:hidden border-b-[1px] border-slate-500 mb-16 justify-center items-center">
+          {innerLinks.map(link => {
+            const n = pathName.lastIndexOf('/')
+            var lastPart = pathName.substring(n + 1)
+            const isActive = lastPart === link ? true : false
+            const border = isActive
+              ? `border-b-2 border-b-${params.name[0]}`
+              : ''
+            const textClass = isActive ? 'text-white' : 'text-planet-secondary'
+            return (
+              <Link
+                href={`planets/${params.name[0]}/${link}`}
+                className={`py-4 w-full text-center md:text-left uppercase font-bold tracking-wider ${textClass} ${border}`}
+                key={link}
+              >
+                {link}
+              </Link>
+            )
+          })}
         </div>
 
         <div className="flex flex-col items-center px-4 lg:max-w-[800px] lg:w-[100%] ">
-          <div className="flex md:hidden">
+          <motion.div
+            className="flex md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
             <Image
               src={Planet.images[imgSrc]}
               alt={Planet.name}
@@ -68,9 +82,13 @@ export default async function Page({
               height={200}
               className="floating"
             />
-          </div>
+          </motion.div>
           {/**/}
-          <div className="hidden md:flex lg:hidden">
+          <motion.div
+            className="hidden md:flex lg:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
             <Image
               src={Planet.images[imgSrc]}
               alt={Planet.name}
@@ -78,8 +96,12 @@ export default async function Page({
               height={300}
               className="floating"
             />
-          </div>
-          <div className="hidden lg:flex">
+          </motion.div>
+          <motion.div
+            className="hidden lg:flex"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
             <Image
               src={Planet.images[imgSrc]}
               alt={Planet.name}
@@ -87,10 +109,14 @@ export default async function Page({
               height={600}
               className="floating"
             />
-          </div>
+          </motion.div>
         </div>
         <div className="flex p-4 my-8 justify-center flex-col md:flex-row items-center md:items-center lg:flex-col gap-16">
-          <div className="flex flex-col md:w-[700px] text-center md:text-left lg:w-[100%] lg:max-w-[700px]">
+          <motion.div
+            className="flex flex-col md:w-[700px] text-center md:text-left lg:w-[100%] lg:max-w-[700px]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
             <h1 className="text-4xl uppercase font-heading pb-4 md:pb-8">
               {Planet.name} - {params.name.slice(1)}
             </h1>
@@ -108,7 +134,7 @@ export default async function Page({
                 Wikipedia <span className="text-[10px]">🔗</span>
               </a>
             </span>
-          </div>
+          </motion.div>
           <div className="hidden md:flex flex-col w-full gap-4">
             {innerLinks.map((link, index) => {
               const n = pathName.lastIndexOf('/')
@@ -134,6 +160,6 @@ export default async function Page({
         <Pills label="radius" info={Planet.radius} />
         <Pills label="average temp." info={Planet.temperature} />
       </div>
-    </PageWrapper>
+    </>
   )
 }

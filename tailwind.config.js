@@ -5,6 +5,12 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
+  safelist: [
+    {
+      pattern:
+        /border-b-(mercury|venus|earth|mars|jupiter|saturn|uranus|neptune)/
+    }
+  ],
   theme: {
     extend: {
       backgroundImage: {
