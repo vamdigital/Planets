@@ -36,7 +36,6 @@ export const Header = ({ linkUrls }: Props) => {
         </div>
         <div className="flex p-6 md:hidden lg:p-0  ">
           <MobileMenu clickHandler={buttonHandler} isOpen={!isHidden} />
-          {/* <button onClick={buttonHandler}>Menu</button> */}
         </div>
       </div>
       <div className="flex p-6 pt-0 lg:pt-6 md:justify-center md:w-full md:items-center">
@@ -56,7 +55,7 @@ export const Header = ({ linkUrls }: Props) => {
                   className={`flex w-5 h-5 rounded-full md:hidden  ${isActive} ? ${lk}-bg : bg-white`}
                 ></div>
                 <Link
-                  href={`/planets/${lk}`}
+                  href={`/planets/${lk}/overview`}
                   className={isActive ? `text-${lk}` : ''}
                   scroll={false}
                 >
