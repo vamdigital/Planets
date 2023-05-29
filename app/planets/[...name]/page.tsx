@@ -1,9 +1,10 @@
+'use client'
 import Planets from 'app/api/db/data.json'
 import { PageWrapper } from '@planets/app/components/PageWrapper'
 import { Pills } from '@planets/app/components/Pills'
 import Image from 'next/image'
 import Link from 'next/link'
-import { AnimatePresence } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 
 export async function generateStaticParams() {
   return Planets.map(res => [
@@ -25,6 +26,7 @@ export default async function Page({
     return acc
   }, {} as Planet)
 
+  const pathName = usePathname()
   const idx =
     params.name[1] === 'overview'
       ? 'overview'
@@ -49,7 +51,7 @@ export default async function Page({
           {innerLinks.map(link => (
             <Link
               href={`planets/${params.name[0]}/${link}`}
-              className="py-4 px-6 w-full text-center md:text-left capitalize"
+              className="py-4 px-6 w-full text-center md:text-left uppercase"
               key={link}
             >
               {link}
@@ -108,15 +110,21 @@ export default async function Page({
             </span>
           </div>
           <div className="hidden md:flex flex-col w-full gap-4">
-            {innerLinks.map((link, index) => (
-              <Link
-                href={`planets/${params.name[0]}/${link}`}
-                className="border-[1px] border-slate-500 py-4 px-6 w-full text-left capitalize"
-                key={link}
-              >
-                {`0${index + 1}. ${link}`}
-              </Link>
-            ))}
+            {innerLinks.map((link, index) => {
+              const n = pathName.lastIndexOf('/')
+              var lastPart = pathName.substring(n + 1)
+              const isActive = lastPart === link ? true : false
+              const bgClass = isActive ? `${params.name[0]}-bg` : ''
+              return (
+                <Link
+                  href={`planets/${params.name[0]}/${link}`}
+                  className={`border-[1px] border-slate-500 py-4 px-6 w-full text-left uppercase hover:bg-planet-secondary ${bgClass}`}
+                  key={link}
+                >
+                  {`0${index + 1}. ${link}`}
+                </Link>
+              )
+            })}
           </div>
         </div>
       </div>
