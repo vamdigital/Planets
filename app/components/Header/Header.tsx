@@ -30,7 +30,7 @@ export const Header = ({ linkUrls }: Props) => {
     <header className="flex flex-col lg:flex-row lg:justify-between md:border-b-[1px] md:border-slate-500">
       <div className="flex border-b-[1px] border-slate-500 md:border-none">
         <div className="flex p-8 w-full lg:justify-between md:justify-center">
-          <Link href="/">
+          <Link href="/" aria-label="Return to home page link">
             <Logo />
           </Link>
         </div>
