@@ -13,8 +13,9 @@ export default function Home() {
         <Link
           href="/planets/mercury/overview"
           className="border-[1px] border-slate-400 w-[50%] py-4 font-heading leading-tight text-center uppercase text-lg flex justify-center"
+          aria-label="link to begin mercury overview"
         >
-          Start
+          Start exploring the space.
         </Link>
       </div>
     </main>
